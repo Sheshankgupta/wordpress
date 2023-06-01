@@ -1,0 +1,13 @@
+.welcome {
+	position: relative;
+	z-index: 5;
+
+	.inner-welcome {
+		background: $siteDark;
+		padding: 20px;
+
+		@include mQ(mobile) {
+			padding: 65px;
+		}
+	}
+}

@@ -1,0 +1,46 @@
+.content {
+	background: $siteDarker;
+
+	@include mQ(mobile) {
+		&.sec {
+			padding: 60px 0;
+		}
+	}
+
+	.neg-top {
+		margin-top: -60px;
+
+		@include mQ(mobile) {
+			margin-top: -120px;
+		}
+	}
+
+	h2 {
+		font-size: 24px;
+	}
+
+	.meta-number {
+		.box {
+			margin-right: 20px;
+
+			@include mQ(mobile) {
+				margin-right: 50px;
+			}
+
+			h2 {
+				color: $siteLight;
+				font-size: 12px;
+			}
+
+			h3 {
+				color: $white;
+				font-size: 32px;
+				letter-spacing: -0.035rem;
+			}
+		}
+	}
+
+	.list {
+		padding-left: 10px;
+	}
+}

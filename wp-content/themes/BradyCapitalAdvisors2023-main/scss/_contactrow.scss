@@ -1,0 +1,7 @@
+.contact-call {
+	background: #1a1a1a;
+
+	.container {
+		@include wrap($wider, 1025px);
+	}
+}

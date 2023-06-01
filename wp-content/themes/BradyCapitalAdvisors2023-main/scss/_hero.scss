@@ -1,0 +1,88 @@
+.hero {
+	.bg-hero {
+		background-position: -20% 60px;
+		background-repeat: no-repeat;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		right: -40px;
+		width: 100%;
+
+		@include mQ(desktop) {
+			background-position: right 60px;
+			right: 0;
+		}
+	}
+
+	.container {
+		@include wrap($wider, 1025px);
+	}
+
+	.herobg {
+		padding-top: 60px;
+		padding-bottom: 60px;
+
+		@include mQ(mobile) {
+			padding-top: 160px;
+			padding-bottom: 280px;
+		}
+	}
+
+	.imghero {
+		transform: translateX(-480px);
+
+		@include mQ(mobile) {
+			transform: translateX(-300px);
+		}
+	}
+}
+
+.title {
+	padding: 60px 0;
+
+	@include mQ(mobile) {
+		padding: 120px 0;
+	}
+
+	.bar {
+		background: $siteRed;
+		display: inline-block;
+		height: 2px;
+		margin: 25px 0;
+		width: 100px;
+	}
+
+	h2 {
+		margin-bottom: 25px;
+	}
+
+	+ .move-top {
+		margin-top: -60px;
+	}
+}
+
+.number-meta {
+	h2 {
+		color: $white;
+		font: 600 52px/1.25 $fontBod;
+
+		span {
+			font-size: 24px;
+		}
+	}
+
+	h3 {
+		color: $siteRed;
+		font: 12px $fontJos;
+		letter-spacing: normal;
+	}
+
+	@include mQ(tablet) {
+		.air-desk {
+			position: absolute;
+			top: 0;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+	}
+}

@@ -1,0 +1,31 @@
+.deals {
+	.box {
+		background: #353535;
+		height: 100%;
+
+		.meta {
+			background: #282828;
+			color: $white;
+			font-size: 12px;
+			line-height: normal;
+			letter-spacing: normal;
+			padding: 20px;
+
+			@include mQ(mobile) {
+				padding: 20px 25px;
+			}
+		}
+
+		.text {
+			padding: 20px;
+
+			@include mQ(mobile) {
+				padding: 25px;
+			}
+		}
+	}
+}
+
+.recent-deals {
+	background: #1f1f1f;
+}

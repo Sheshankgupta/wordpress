@@ -1,0 +1,57 @@
+.contact {
+	h2 {
+		color: $siteLight;
+	}
+
+	h3 {
+		font-family: $fontJos;
+
+		a {
+			color: inherit;
+			text-decoration: none;
+		}
+	}
+
+	.form {
+		background: $siteDarker;
+		padding: 20px;
+
+		@include mQ(mobile) {
+			padding: 65px;
+		}
+
+		.form-label {
+			color: $siteLight;
+			line-height: normal;
+		}
+
+		.form-control {
+			background: transparent;
+			border: 0 none;
+			border-bottom: 1px solid $white;
+			border-radius: 0;
+			color: $white;
+			letter-spacing: normal;
+			padding-left: 0;
+			padding-right: 0;
+
+			&::placeholder {
+				color: rgba($siteLight, 0.3);
+			}
+
+			&:focus {
+				box-shadow: none;
+			}
+		}
+
+		textarea {
+			height: 100px;
+		}
+	}
+
+	@include mQ(mobile) {
+		.pt55 {
+			padding-top: 55px;
+		}
+	}
+}

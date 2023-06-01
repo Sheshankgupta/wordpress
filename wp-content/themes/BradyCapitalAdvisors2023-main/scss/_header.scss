@@ -1,0 +1,97 @@
+.header {
+	padding: 15px 0;
+	position: relative;
+	z-index: 500;
+}
+
+@include mQ(tablet) {
+	.brand {
+		img {
+			height: 100px;
+			width: auto;
+		}
+	}
+}
+
+.sitenav {
+	background: $siteDark;
+
+	@include mQ(touch) {
+		left: 0;
+		position: absolute;
+		text-align: center;
+		top: 100%;
+		width: 100%;
+	}
+
+	@include mQ(tablet) {
+		background: transparent;
+		min-width: 325px;
+	}
+
+	li {
+		@include mQ(tablet) {
+			margin-right: 35px;
+		}
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+
+	a {
+		color: $siteLight;
+		font: 12px $fontJos;
+		letter-spacing: 0.06rem;
+		text-decoration: none;
+		text-transform: uppercase;
+
+		&.linkcta {
+			border: 1px solid $siteLight;
+			background: rgba(#c4c4c4, 0.05);
+			padding: 10px 20px;
+			line-height: 1.25;
+		}
+
+		&.active {
+			color: $white;
+		}
+	}
+}
+
+.navicon {
+	position: absolute;
+	right: 15px;
+	top: 50%;
+	transform: translateY(-50%);
+	z-index: 5;
+
+	span {
+		background: $white;
+		display: block;
+		height: 2px;
+		width: 24px;
+
+		+ span {
+			margin-top: 5px;
+		}
+	}
+
+	&.clicked {
+		margin-top: -5px;
+
+		span {
+			&:nth-child(1) {
+				transform: rotate(45deg) translateX(5px) translateY(5px);
+			}
+
+			&:nth-child(2) {
+				display: none;
+			}
+
+			&:nth-child(3) {
+				transform: rotate(-45deg);
+			}
+		}
+	}
+}

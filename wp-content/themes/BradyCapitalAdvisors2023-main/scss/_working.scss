@@ -1,0 +1,31 @@
+.working {
+	background: #e8e8e8;
+	position: relative;
+
+	h3 {
+		color: $siteBlack;
+	}
+}
+.working-card {
+	position: relative;
+	padding-bottom: 100px;
+
+	.box {
+		background: #f4f4f4;
+		height: 100%;
+		padding: 30px;
+		.img {
+			height: 90px;
+		}
+		h2 {
+			color: $siteBlack;
+			font-size: 16px;
+			font-weight: 700;
+		}
+		p {
+			color: $siteDark;
+			font-size: 16px;
+			opacity: 0.8;
+		}
+	}
+}

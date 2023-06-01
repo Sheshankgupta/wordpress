@@ -1,0 +1,76 @@
+@mixin cta {
+	color: $white;
+	border: 1px solid $siteLight;
+	background: rgba(#c4c4c4, 0.05);
+	font: 12px $fontJos;
+	letter-spacing: 0.06rem;
+	line-height: 1.25;
+	padding: 10px 20px;
+	text-decoration: none;
+	text-transform: uppercase;
+
+	.icon {
+		display: inline;
+		margin-left: 10px;
+		position: relative;
+		top: -1px;
+	}
+
+	&.red {
+		border-color: $siteRed;
+		background: $siteRed;
+	}
+}
+
+@mixin innerBorder($pos: 30px) {
+	position: relative;
+
+	&:before {
+		border: 1px solid #393939;
+		content: '';
+		height: calc(100% - 30px);
+		left: 15px;
+		pointer-events: none;
+		position: absolute;
+		top: 15px;
+		width: calc(100% - 30px);
+
+		@include mQ(mobile) {
+			height: calc(100% - #{$pos} * 2);
+			left: $pos;
+			top: $pos;
+			width: calc(100% - #{$pos} * 2);
+		}
+	}
+}
+
+@mixin wrap($size: 1145px, $screen: 1200px) {
+	@media (min-width: $screen) {
+		max-width: $size;
+	}
+}
+
+@mixin mQ($point) {
+	$touch: '(max-width: 991px)';
+	$mobile: '(min-width: 768px)';
+	$tablet: '(min-width: 992px)';
+	$desktop: '(min-width: 1200px)';
+
+	@if $point == touch {
+		@media #{$touch} {
+			@content;
+		}
+	} @else if $point == mobile {
+		@media #{$mobile} {
+			@content;
+		}
+	} @else if $point == tablet {
+		@media #{$tablet} {
+			@content;
+		}
+	} @else if $point == desktop {
+		@media #{$desktop} {
+			@content;
+		}
+	}
+}

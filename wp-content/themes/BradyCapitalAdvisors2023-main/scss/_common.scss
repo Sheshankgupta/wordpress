@@ -1,0 +1,145 @@
+body {
+	background: $siteBlack;
+}
+
+.container {
+	@include wrap;
+
+	&.wider {
+		@include wrap($wider, 1025px);
+	}
+}
+
+.cta {
+	@include cta;
+}
+
+.sec {
+	padding: 40px 0;
+
+	@include mQ(mobile) {
+		padding: 85px 0;
+	}
+
+	&.dark-gradient {
+		background: linear-gradient(180deg, $siteBlack 0%, $siteBlack 0.01%, #202020 100%);
+	}
+
+	&.light {
+		background: #e8e8e8;
+	}
+}
+
+.ratio-img {
+	position: relative;
+	width: 100%;
+
+	@include mQ(tablet) {
+		height: 100%;
+	}
+
+	img {
+		height: 100%;
+		left: 0;
+		object-fit: cover;
+		object-position: center;
+		position: absolute;
+		top: 0;
+		width: 100%;
+	}
+
+	&:before {
+		content: '';
+		display: block;
+		padding-top: 141.55%;
+	}
+
+	@include mQ(tablet) {
+		&.doublehgt {
+			&:before {
+				padding-top: 208%;
+			}
+		}
+	}
+
+	&.ratio-16 {
+		&:before {
+			padding-top: 62.5%;
+		}
+	}
+}
+
+.dark-box {
+	background: #262626;
+	height: 100%;
+	padding: 30px;
+	@include innerBorder;
+
+	@include mQ(mobile) {
+		padding: 80px;
+	}
+
+	@include mQ(tablet) {
+		height: 100%;
+	}
+}
+
+.bg-pattern {
+	background-position: 0 -2px;
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: 0;
+}
+
+.under-welcome {
+	margin-top: -120px;
+	padding-top: 160px;
+
+	@include mQ(mobile) {
+		padding-top: 200px;
+	}
+
+	h3 {
+		color: $siteBlack;
+	}
+
+	p,
+	li {
+		color: $siteDark;
+	}
+}
+
+.info-user-card {
+	.user-meta {
+		background: #262626;
+		padding: 30px;
+		@include innerBorder(45px);
+
+		@include mQ(mobile) {
+			padding: 100px;
+		}
+	}
+}
+
+.more-text {
+	.less {
+		display: none;
+	}
+
+	&.clicked {
+		.more {
+			display: none;
+		}
+
+		.less {
+			display: block;
+		}
+
+		.icon {
+			transform: rotate(180deg);
+		}
+	}
+}
